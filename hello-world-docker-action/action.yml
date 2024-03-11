@@ -4,13 +4,13 @@ inputs:
   who-to-greet:
     description: 'who to greet'
     required: true
-    defaults: 'world'
-  outputs:
-    time:
-      description: 'the time we said hello'
+    default: 'world'
+outputs:
+  time:
+    description: 'the time we said hello'
 
-  runs:
-    using: 'docker'
-    image: 'Dockerfile'
-    args:
-      - ${{ inputs.who-to-greet }}
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
