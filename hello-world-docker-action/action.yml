@@ -1,6 +1,6 @@
 name: 'Hello World Docker Action'
 description: 'Say hello to a user or the world.'
-input:
+inputs:
   who-to-greet:
     description: 'who to greet'
     required: true
@@ -13,4 +13,4 @@ input:
     using: 'docker'
     image: 'Dockerfile'
     args: 
-      - ${{ inputs.who-to-greet }}
+      - ${{ input.who-to-greet }}
