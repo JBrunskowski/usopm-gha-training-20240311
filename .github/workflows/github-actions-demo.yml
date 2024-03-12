@@ -48,12 +48,19 @@ jobs:
     runs-on: ubuntu-latest
     environment: Stage
     steps:
-      - run: echo "Deploying to Stage..."
+      - run: |
+          echo "Deploying to Stage..."
+          sleep 15
 
   Production:
     name: Deploy to Production
     needs: [Stage]
     runs-on: ubuntu-latest
-    environment: Production
+    environment:
+      name: Production
+      url: https://writeabout.net
+    if: github.event.inputs.environment == 'Production'
     steps:
-      - run: echo "Deploying to Production..."
+      - run: |
+          echo "Deploying to Production..."
+          sleep 15
